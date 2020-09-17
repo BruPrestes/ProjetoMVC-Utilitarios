@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html
+
+xmlns="http://www.w3.org/1999/xhtml"
+
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+
+xmlns:f="http://java.sun.com/jsf/core"
+
+>
+
+<h:head>
+
+<meta charset="UTF-8"/>
+
+<title>Sistema de mecânica</title>
+
+</h:head>
+
+<h:body>
+
+<h:form>
+
+<h:panelGrid columns="2">
+
+Digite o código do produto: <h:inputText/>
+
+Especifique o produto: <h:inputText />
+
+Categoria do produto: 
+
+<h:selectOneMenu value="#{produtoBean.tipo}">
+
+<f:selectItem itemLabel="-- Selecione --" noSelectionOption="true"/>
+
+<f:selectItems value="#{produtoBean.tipos}" var="tipo" itemValue="#{tipo}"/>
+
+</h:selectOneMenu>
+
+Valor do produto: <h:inputText />
+
+
+</h:panelGrid>
+
+<h:selectManyCheckbox value="#{produtoBean.servico}">
+
+<f:selectItems value="#{produtoBean.servicos}" var="servico" itemValue="#{servico}" class="opcao"/>
+
+</h:selectManyCheckbox>
+
+<h:commandButton value="Cadastrar" action="cadastrarUtilitario"/>
+
+</h:form>
+
+</h:body>
+
+</html>
